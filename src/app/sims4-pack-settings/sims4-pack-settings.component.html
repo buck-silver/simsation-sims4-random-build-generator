@@ -1,0 +1,22 @@
+<section class="pack-settings">
+  <h2>Pack Settings</h2>
+  <section class="pack-grid">
+    <section class="pack-section" *ngFor="let category of service.categories">
+      <h3>{{ category }} Packs</h3>
+      <mat-divider></mat-divider>
+
+      <section class="pack-choices">
+        <ng-container *ngFor="let pack of service.packs.value | keyvalue">
+          <mat-checkbox
+            *ngIf="pack.value.category == category"
+            class="pack-toggle"
+            [checked]="pack.value.enabled"
+            (change)="service.togglePack(pack.value)"
+            color="primary"
+            >{{ pack.value.name }}</mat-checkbox
+          >
+        </ng-container>
+      </section>
+    </section>
+  </section>
+</section>

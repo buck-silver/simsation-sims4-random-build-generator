@@ -1,0 +1,37 @@
+.pack-settings {
+  box-sizing: border-box;
+  width: 100%;
+  margin: 1rem 0;
+}
+
+.pack-grid {
+  display: grid;
+  grid-template-columns: 50% 50%;
+
+  h3 {
+    margin: 0.25em;
+  }
+
+  .pack-settings-header {
+    width: 100%;
+  }
+
+  .pack-section {
+    margin: 1em;
+  }
+
+  .pack-choices {
+    display: grid;
+    grid-template-columns: 50% 50%;
+  }
+
+  .pack-toggle {
+    margin: 0.5em 1em;
+  }
+}
+
+@media only screen and (max-width: 45rem) {
+  .pack-grid {
+    grid-template-columns: 100%;
+  }
+}

@@ -1,0 +1,125 @@
+@use "sass:map";
+@use "../styles/palettes";
+
+.app-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.app {
+  box-sizing: border-box;
+  position: relative;
+  width: 100%;
+  max-width: 45rem;
+  height: 100%;
+  padding: 1rem;
+
+  .logo {
+    box-sizing: border-box;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem 0;
+
+    img {
+      height: 3rem;
+    }
+  }
+
+  .border-container,
+  .presentation-container {
+    box-sizing: border-box;
+    width: 100%;
+    border-radius: 0.25rem;
+    background-color: darken(map.get(palettes.$simsation-primary, 400), 20%);
+    padding: 0.75rem;
+  }
+
+  .suggestion-text {
+    font-size: 3em;
+    line-height: 1em;
+  }
+
+  .presentation-container {
+    position: relative;
+    height: 100%;
+    min-height: 16rem;
+    padding-top: 1rem;
+    border-style: solid;
+    border-color: rgba(255, 255, 255, 0.5);
+    border-width: 1px;
+    padding-bottom: 3rem;
+  }
+
+  .reaction-container {
+    position: absolute;
+    right: 0;
+    bottom: 1rem;
+  }
+
+  .reaction {
+    font-size: 2rem;
+    transition: font-size ease 0.1s;
+  }
+
+  .reaction-pop {
+    font-size: 3rem;
+  }
+
+  .pulse {
+    animation: pulse 2s infinite;
+  }
+  @keyframes pulse {
+    0% {
+      transform: scale(0.9);
+    }
+
+    50% {
+      transform: scale(1);
+    }
+
+    100% {
+      transform: scale(0.9);
+    }
+  }
+
+  .action-container {
+    position: absolute;
+    bottom: -1.2rem;
+    left: calc(50% - 1.25rem);
+  }
+
+  button {
+    position: sticky;
+    align-self: flex-end;
+    bottom: 1rem;
+    margin-right: 0.25rem;
+  }
+
+  .signature {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+@media only screen and (max-width: 60rem) {
+  .logo {
+    height: 2.5rem;
+  }
+}
+
+@media only screen and (max-width: 40rem) {
+  .logo {
+    height: 2rem;
+  }
+}
+
+@media only screen and (max-width: 20rem) {
+  .logo {
+    height: 1.5rem;
+  }
+}
