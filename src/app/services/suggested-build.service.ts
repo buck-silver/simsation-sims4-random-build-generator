@@ -50,9 +50,11 @@ export class SuggestedBuildService {
       return;
     }
     const fin = this.suggestTheBuild();
+    const filler = fin.replace(/([\S])/g, '\xa0');
     const interval = Math.ceil(this.duration / fin.length);
+
     const newSuggestion = new SuggestionData(
-      '',
+      filler,
       fin,
       true,
       interval,
@@ -60,6 +62,7 @@ export class SuggestedBuildService {
       0,
       this.duration
     );
+    console.table(newSuggestion);
     this.animateTheSuggestion(newSuggestion);
   }
 
@@ -98,21 +101,31 @@ export class SuggestedBuildService {
     }
     // Case - Continue in progress animation
     else {
-      const current = data.suggestionFinal.substr(
-        0,
-        data.suggestionCurrent.length + 1
-      );
       const fin = data.suggestionFinal;
-      const inProgress = true;
+
       const interval = data.interval;
-      const intervalCurrent = data.intervalCurrent + data.interval;
-      const percent = (intervalCurrent / data.duration) * 100;
+      const intervalCurrent = data.intervalCurrent + interval;
       const duration = data.duration;
 
+      const progress = intervalCurrent / duration;
+      const subLength = Math.floor(progress * fin.length);
+      const percent = progress * 100;
+
+      const fill1 = fin.substring(0, subLength);
+      const fill2 = data.suggestionCurrent.substring(
+        subLength,
+        data.suggestionCurrent.length
+      );
+      const fill = fill1 + fill2;
+
+      console.log(
+        `Progress: ${progress}, SubLength: ${subLength}, Fill: ${fill}`
+      );
+
       const next = new SuggestionData(
-        current,
+        fill,
         fin,
-        inProgress,
+        true,
         interval,
         intervalCurrent,
         percent,

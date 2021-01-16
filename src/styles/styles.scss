@@ -21,8 +21,14 @@ body {
   font-family: Roboto, "Helvetica Neue", sans-serif;
 }
 
-/* Cabin Sketch */
+// Cabin Sketch
 @import url("https://fonts.googleapis.com/css2?family=Cabin+Sketch:wght@400;700&display=swap");
 .font-sketch {
-  font-family: "Cabin Sketch", cursive !important;
+  font-family: "Cabin Sketch", cursive, monospace !important;
+}
+
+// Roboto Monospace
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap");
+.font-ms {
+  font-family: "Roboto Mono", monospace !important;
 }
