@@ -75,6 +75,12 @@ export const SIMS_4_PACKS: PackData[] = [
     category: 'Game',
   },
   {
+    name: 'Jungle Adventure',
+    icon: 'GP06 Jungle Adventure.png',
+    enabled: true,
+    category: 'Game',
+  },
+  {
     name: 'StrangerVille',
     icon: 'GP07 Strangerville.png',
     enabled: true,

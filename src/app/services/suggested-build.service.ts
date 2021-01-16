@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 import { Sims4BuildBudgetService } from './sims4-build-budget.service';
 import { Sims4BuildColorSchemeService } from './sims4-build-color-scheme.service';
+import { Sims4BuildLotTraitService } from './sims4-build-lot-trait.service';
 import { Sims4BuildSimCountService } from './sims4-build-sim-count.service';
 import { Sims4BuildSpecialRoomsService } from './sims4-build-special-rooms.service';
 import { Sims4BuildStyleService } from './sims4-build-style.service';
@@ -33,7 +34,8 @@ export class SuggestedBuildService {
     private buildSimCountService: Sims4BuildSimCountService,
     private buiildSpecialRoomService: Sims4BuildSpecialRoomsService,
     private buildStyleService: Sims4BuildStyleService,
-    private buildWorldService: Sims4BuildWorldService
+    private buildWorldService: Sims4BuildWorldService,
+    private buildLotTraitService: Sims4BuildLotTraitService
   ) {
     const sentence = this.suggestTheBuild();
 
@@ -73,7 +75,8 @@ export class SuggestedBuildService {
     const buildSpecialRoom = this.buiildSpecialRoomService.getRandom();
     const buildStyle = this.buildStyleService.getRandom();
     const buildWorld = this.buildWorldService.getRandom();
-    return `Build ${buildColorScheme} ${buildStyle} in ${buildWorld} for ${buildSimCount} with a budget of ${buildBudget} that includes ${buildSpecialRoom}.`;
+    const buildLotTrait = this.buildLotTraitService.getRandom();
+    return `Build ${buildColorScheme} ${buildStyle} in ${buildWorld} with the lot trait "${buildLotTrait}" for ${buildSimCount} with a budget of ${buildBudget} that includes ${buildSpecialRoom}.`;
   }
 
   private animateTheSuggestion(data: SuggestionData) {
