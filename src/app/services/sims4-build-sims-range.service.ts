@@ -7,7 +7,7 @@ export const MAX_SIM_RANGE = 8;
 @Injectable({
   providedIn: 'root',
 })
-export class Sims4BuildSimCountService {
+export class Sims4BuildSimsRangeService {
   private _min = MIN_SIM_RANGE;
   get min(): number {
     return this._min;

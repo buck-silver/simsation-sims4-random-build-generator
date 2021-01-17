@@ -3,7 +3,7 @@ import { BehaviorSubject } from 'rxjs';
 import { Sims4BuildSimoleonRangeService } from './sims4-build-simoleon-range.service';
 import { Sims4BuildColorSchemeService } from './sims4-build-color-scheme.service';
 import { Sims4BuildLotTraitService } from './sims4-build-lot-trait.service';
-import { Sims4BuildSimCountService } from './sims4-build-sim-count.service';
+import { Sims4BuildSimsRangeService } from './sims4-build-sims-range.service';
 import { Sims4BuildSpecialRoomsService } from './sims4-build-special-rooms.service';
 import { Sims4BuildStyleService } from './sims4-build-style.service';
 import { Sims4BuildWorldService } from './sims4-build-world.service';
@@ -31,7 +31,7 @@ export class Sims4BuildSuggestionService {
   constructor(
     private buildBudgetService: Sims4BuildSimoleonRangeService,
     private buildColorSchemeService: Sims4BuildColorSchemeService,
-    private buildSimCountService: Sims4BuildSimCountService,
+    private buildSimCountService: Sims4BuildSimsRangeService,
     private buiildSpecialRoomService: Sims4BuildSpecialRoomsService,
     private buildStyleService: Sims4BuildStyleService,
     private buildWorldService: Sims4BuildWorldService,

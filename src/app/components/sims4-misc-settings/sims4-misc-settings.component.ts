@@ -6,10 +6,10 @@ import {
   MAX_SIMOLEON_RANGE,
 } from 'src/app/services/sims4-build-simoleon-range.service';
 import {
-  Sims4BuildSimCountService,
+  Sims4BuildSimsRangeService,
   MIN_SIM_RANGE,
   MAX_SIM_RANGE,
-} from 'src/app/services/sims4-build-sim-count.service';
+} from 'src/app/services/sims4-build-sims-range.service';
 
 @Component({
   selector: 'sims4-misc-settings',
@@ -18,7 +18,7 @@ import {
 })
 export class Sims4MiscSettingsComponent {
   constructor(
-    public simCountService: Sims4BuildSimCountService,
+    public simCountService: Sims4BuildSimsRangeService,
     public simoleonRangeService: Sims4BuildSimoleonRangeService
   ) {}
 
