@@ -1,49 +1,8 @@
 <div class="app-wrapper">
   <section class="app">
     <simsation-logo src="assets/logo.svg" alt="logo"></simsation-logo>
-
-    <!-- Presentation Container -->
-    <div class="border-container mat-elevation-z8">
-      <div class="presentation-container">
-        <!-- Output Container -->
-        <h1 class="suggestion-text font-sketch">
-          {{ suggestion }}
-        </h1>
-
-        <section
-          [class]="
-            'reaction-container' +
-            (this.reaction != this.thinking ? ' pulse' : '')
-          "
-        >
-          <div
-            [class]="
-              'reaction' +
-              (this.reaction != this.thinking ? ' reaction-pop' : '')
-            "
-          >
-            {{ reaction }}
-          </div>
-        </section>
-
-        <!-- Action Container -->
-        <section class="action-container">
-          <button
-            mat-mini-fab
-            (click)="makeSuggestion()"
-            color="primary"
-            aria-label="Make a new suggestion"
-            [disabled]="canSuggest"
-            color="accent"
-          >
-            <mat-icon>casino</mat-icon>
-          </button>
-        </section>
-      </div>
-    </div>
-
+    <sims4-build-suggestion></sims4-build-suggestion>
     <app-sims4-pack-settings></app-sims4-pack-settings>
-
     <simsation-social></simsation-social>
   </section>
 </div>
