@@ -119,7 +119,7 @@ export const SIMS_4_PACKS: PackData[] = [
   {
     name: 'Journey to Batuu',
     icon: 'GP09 Journey to Batuu.png',
-    enabled: false,
+    enabled: true,
     category: 'Game',
   },
   {
@@ -209,7 +209,7 @@ export const SIMS_4_PACKS: PackData[] = [
   {
     name: 'My First Pet',
     icon: 'SP14 My First Pet Stuff.png',
-    enabled: false,
+    enabled: true,
     category: 'Stuff',
   },
   {
