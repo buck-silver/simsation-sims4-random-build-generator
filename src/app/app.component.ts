@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { getRandomInt } from './services/get-random-int';
+import { getRandomInt } from './util/get-random-int';
 import { SuggestedBuildService } from './services/suggested-build.service';
 
 @Component({

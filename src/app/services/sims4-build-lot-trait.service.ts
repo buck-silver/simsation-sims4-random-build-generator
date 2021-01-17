@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Sims4PackListService } from './sims4-build-pack.service';
-import { getRandomInt } from './get-random-int';
+import { getRandomInt } from '../util/get-random-int';
 
 class TraitCondition {
   constructor(public pack: string = '', public traits: string[] = []) {}
