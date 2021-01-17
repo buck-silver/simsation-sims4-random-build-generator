@@ -2,7 +2,12 @@
   <section class="app">
     <simsation-logo src="assets/logo.svg" alt="logo"></simsation-logo>
     <sims4-build-suggestion></sims4-build-suggestion>
-    <app-sims4-pack-settings></app-sims4-pack-settings>
+    <section class="settings">
+      <mat-accordion>
+        <app-sims4-pack-settings></app-sims4-pack-settings>
+        <sims4-misc-settings></sims4-misc-settings>
+      </mat-accordion>
+    </section>
     <simsation-social></simsation-social>
   </section>
 </div>

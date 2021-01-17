@@ -1,11 +1,14 @@
-<section class="pack-settings">
-  <h2>Pack Settings</h2>
+<mat-expansion-panel expanded="0">
+  <mat-expansion-panel-header>
+    <mat-panel-title>Pack Settings</mat-panel-title>
+  </mat-expansion-panel-header>
+  <mat-divider></mat-divider>
   <section class="pack-grid">
-    <section class="pack-section" *ngFor="let category of service.categories">
+    <section *ngFor="let category of service.categories">
       <h3>{{ category }} Packs</h3>
       <mat-divider></mat-divider>
 
-      <section class="pack-choices">
+      <section class="pack-grid">
         <ng-container *ngFor="let pack of service.packs.value | keyvalue">
           <mat-checkbox
             *ngIf="pack.value.category == category"
@@ -19,4 +22,4 @@
       </section>
     </section>
   </section>
-</section>
+</mat-expansion-panel>

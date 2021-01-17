@@ -1,0 +1,52 @@
+@use "sass:map";
+@use "../../../styles/palettes";
+
+.misc-settings {
+  h3 {
+    font-weight: bold;
+    margin: 1em 0 0.25em 0;
+  }
+}
+
+.range-settings {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  justify-items: center;
+  align-items: center;
+}
+
+.slider {
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.setting-lbl {
+  display: inline-flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  font-size: 1em;
+  line-height: 2.75em;
+}
+
+.slider-val {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0.25em 0.25em;
+  font-weight: bold;
+  text-align: center;
+  width: 2.75em;
+  height: 2.75em;
+  border-radius: 2.75em;
+}
+
+.min {
+  background-color: map.get(palettes.$simsation-primary, 500);
+  color: map.get(map.get(palettes.$simsation-primary, contrast), 500);
+}
+
+.max {
+  background-color: map.get(palettes.$simsation-accent, 500);
+  color: map.get(map.get(palettes.$simsation-accent, contrast), 500);
+}
