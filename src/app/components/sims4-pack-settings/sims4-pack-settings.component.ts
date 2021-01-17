@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Sims4PackListService } from '../../services/sims4-build-pack.service';
+import { Sims4BuildPackService } from '../../services/sims4-build-pack.service';
 
 @Component({
   selector: 'app-sims4-pack-settings',
@@ -7,5 +7,5 @@ import { Sims4PackListService } from '../../services/sims4-build-pack.service';
   styleUrls: ['./sims4-pack-settings.component.scss'],
 })
 export class Sims4PackSettingsComponent {
-  constructor(public service: Sims4PackListService) {}
+  constructor(public service: Sims4BuildPackService) {}
 }

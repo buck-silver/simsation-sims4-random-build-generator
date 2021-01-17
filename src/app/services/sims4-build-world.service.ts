@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Sims4PackListService } from './sims4-build-pack.service';
+import { Sims4BuildPackService } from './sims4-build-pack.service';
 import { getRandomInt } from '../util/get-random-int';
 
 class WorldCondition {
@@ -10,7 +10,7 @@ class WorldCondition {
   providedIn: 'root',
 })
 export class Sims4BuildWorldService {
-  constructor(sims4packs: Sims4PackListService) {
+  constructor(sims4packs: Sims4BuildPackService) {
     sims4packs.packs.subscribe((val) => {
       const updatedWorlds = [];
       for (const condition of this.worldsWithConditions) {

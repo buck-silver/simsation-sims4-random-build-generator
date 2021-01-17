@@ -8,7 +8,7 @@ import {
 @Injectable({
   providedIn: 'root',
 })
-export class Sims4PackListService {
+export class Sims4BuildPackService {
   categories: Set<string> = new Set();
 
   packs: BehaviorSubject<Map<string, PackData>>;
