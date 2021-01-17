@@ -69,12 +69,6 @@ export const SIMS_4_PACKS: PackData[] = [
     category: 'Expansion',
   },
   {
-    name: 'Holiday Celebration',
-    icon: 'FP01 Holiday Celebration Pack.png',
-    enabled: true,
-    category: 'Free',
-  },
-  {
     name: 'Outdoor Retreat',
     icon: 'GP01 Outdoor Retreat.png',
     enabled: true,
@@ -235,5 +229,11 @@ export const SIMS_4_PACKS: PackData[] = [
     icon: 'SP17 Nifty Knitting Stuff.png',
     enabled: true,
     category: 'Stuff',
+  },
+  {
+    name: 'Holiday Celebration',
+    icon: 'FP01 Holiday Celebration Pack.png',
+    enabled: true,
+    category: 'Free',
   },
 ];
