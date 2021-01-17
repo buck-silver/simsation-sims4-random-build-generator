@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
 import { MatSliderChange } from '@angular/material/slider';
 import {
-  Sims4BuildBudgetService,
+  Sims4BuildSimoleonRangeService,
   MIN_SIMOLEON_RANGE,
   MAX_SIMOLEON_RANGE,
-} from 'src/app/services/sims4-build-budget.service';
+} from 'src/app/services/sims4-build-simoleon-range.service';
 import {
   Sims4BuildSimCountService,
   MIN_SIM_RANGE,
@@ -19,7 +19,7 @@ import {
 export class Sims4MiscSettingsComponent {
   constructor(
     public simCountService: Sims4BuildSimCountService,
-    public simoleonRangeService: Sims4BuildBudgetService
+    public simoleonRangeService: Sims4BuildSimoleonRangeService
   ) {}
 
   MIN_SIM_RANGE = MIN_SIM_RANGE;

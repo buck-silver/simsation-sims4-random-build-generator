@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
-import { Sims4BuildBudgetService } from './sims4-build-budget.service';
+import { Sims4BuildSimoleonRangeService } from './sims4-build-simoleon-range.service';
 import { Sims4BuildColorSchemeService } from './sims4-build-color-scheme.service';
 import { Sims4BuildLotTraitService } from './sims4-build-lot-trait.service';
 import { Sims4BuildSimCountService } from './sims4-build-sim-count.service';
@@ -29,7 +29,7 @@ export class Sims4BuildSuggestionService {
   suggestion: BehaviorSubject<SuggestionData>;
 
   constructor(
-    private buildBudgetService: Sims4BuildBudgetService,
+    private buildBudgetService: Sims4BuildSimoleonRangeService,
     private buildColorSchemeService: Sims4BuildColorSchemeService,
     private buildSimCountService: Sims4BuildSimCountService,
     private buiildSpecialRoomService: Sims4BuildSpecialRoomsService,

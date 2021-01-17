@@ -7,7 +7,7 @@ export const MAX_SIMOLEON_RANGE = 100;
 @Injectable({
   providedIn: 'root',
 })
-export class Sims4BuildBudgetService {
+export class Sims4BuildSimoleonRangeService {
   private _min = MIN_SIMOLEON_RANGE;
   get min(): number {
     return this._min;
