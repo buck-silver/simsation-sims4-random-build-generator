@@ -4,7 +4,7 @@ import { Sims4BuildSimoleonRangeService } from './sims4-build-simoleon-range.ser
 import { Sims4BuildColorSchemeService } from './sims4-build-color-scheme.service';
 import { Sims4BuildLotTraitService } from './sims4-build-lot-trait.service';
 import { Sims4BuildSimsRangeService } from './sims4-build-sims-range.service';
-import { Sims4BuildSpecialRoomsService } from './sims4-build-special-rooms.service';
+import { Sims4BuildSpecialsService } from './sims4-build-specials.service';
 import { Sims4BuildStyleService } from './sims4-build-style.service';
 import { Sims4BuildWorldService } from './sims4-build-world.service';
 
@@ -32,7 +32,7 @@ export class Sims4BuildSuggestionService {
     private buildBudgetService: Sims4BuildSimoleonRangeService,
     private buildColorSchemeService: Sims4BuildColorSchemeService,
     private buildSimCountService: Sims4BuildSimsRangeService,
-    private buiildSpecialRoomService: Sims4BuildSpecialRoomsService,
+    private buiildSpecialRoomService: Sims4BuildSpecialsService,
     private buildStyleService: Sims4BuildStyleService,
     private buildWorldService: Sims4BuildWorldService,
     private buildLotTraitService: Sims4BuildLotTraitService

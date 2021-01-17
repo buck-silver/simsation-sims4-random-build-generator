@@ -2,14 +2,14 @@ import { Injectable } from '@angular/core';
 import { Sims4BuildPackService } from './sims4-build-pack.service';
 import { getRandomInt } from '../util/get-random-int';
 
-class RoomConditions {
+class SpecialsConditions {
   constructor(public pack: string = '', public room: string = '') {}
 }
 
 @Injectable({
   providedIn: 'root',
 })
-export class Sims4BuildSpecialRoomsService {
+export class Sims4BuildSpecialsService {
   constructor(sims4packs: Sims4BuildPackService) {
     sims4packs.packs.subscribe((val) => {
       const updatedRooms = [];
@@ -53,11 +53,11 @@ export class Sims4BuildSpecialRoomsService {
     'a Sun or Plant Room',
   ];
 
-  private roomsWithConditions: RoomConditions[] = [
-    new RoomConditions('City Living', 'a Basketball Court'),
-    new RoomConditions('Bowling Night', 'a Bowling Alley'),
-    new RoomConditions('Spa Day', 'a Massage Room'),
-    new RoomConditions('Spa Day', 'a Sauna'),
+  private roomsWithConditions: SpecialsConditions[] = [
+    new SpecialsConditions('City Living', 'a Basketball Court'),
+    new SpecialsConditions('Bowling Night', 'a Bowling Alley'),
+    new SpecialsConditions('Spa Day', 'a Massage Room'),
+    new SpecialsConditions('Spa Day', 'a Sauna'),
   ];
 
   getRandom(): string {
