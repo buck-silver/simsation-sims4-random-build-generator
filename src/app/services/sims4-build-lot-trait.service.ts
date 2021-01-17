@@ -13,7 +13,7 @@ export class Sims4BuildLotTraitService {
   constructor(sims4packs: Sims4BuildPackService) {
     sims4packs.packs.subscribe((val) => {
       const updatedTraits = [];
-      for (const condition of this.worldsWithConditions) {
+      for (const condition of this.traitsWithConditions) {
         if (val.get(condition.pack)?.enabled == true) {
           for (const trait of condition.traits) {
             updatedTraits.push(trait);
@@ -37,10 +37,27 @@ export class Sims4BuildLotTraitService {
     'Private Dwelling',
     'Teen Neighborhood',
     'Off-the-Grid',
-    'Clothing Optional',
   ];
 
-  private worldsWithConditions: TraitCondition[] = [
+  private traitsWithConditions: TraitCondition[] = [
+    new TraitCondition('Get Famous', ['Celebrity Home']),
+    new TraitCondition('Island Living', [
+      'Island Spirits',
+      'Volcanic Activity',
+    ]),
+    new TraitCondition('Discover University', ['Study Spot']),
+    new TraitCondition('Eco Lifestyle', [
+      'Eco Lot',
+      'Geothermal',
+      'Natural Well',
+      'Reduce and Recycle',
+    ]),
+    new TraitCondition('Cats & Dogs', [
+      'Breeding Grounds',
+      'Cat Hangout',
+      'Dog Hangout',
+      'Training Ground',
+    ]),
     new TraitCondition('City Living', [
       "Chef's Kitchen",
       'Quake Zone',
@@ -66,37 +83,9 @@ export class Sims4BuildLotTraitService {
       'Registered Vampire Lair',
       'Vampire Nexus',
     ]),
-    new TraitCondition('Cats & Dogs', [
-      'Breeding Grounds',
-      'Cat Friendly',
-      'Cat Hangout',
-      'Dog Friendly',
-      'Dog Hangout',
-      'Training Ground',
-    ]),
     new TraitCondition('Jungle Adventure', [
       'Creepy Crawlies',
       'Peace and Quiet',
-    ]),
-    new TraitCondition('Get Famous', [
-      'Celebrity Home',
-      'Hottest Spot in Town',
-      'Up-and-Coming Hotspot',
-    ]),
-    new TraitCondition('Island Living', [
-      'Island Spirits',
-      'Volcanic Activity',
-    ]),
-    new TraitCondition('Discover University', [
-      'Study Spot',
-      'University Student Hang Out',
-    ]),
-    new TraitCondition('Eco Lifestyle', [
-      'Eco Lot',
-      'Geothermal',
-      'Landfill Lot',
-      'Natural Well',
-      'Reduce and Recycle',
     ]),
   ];
 
