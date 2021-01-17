@@ -65,7 +65,6 @@ export class Sims4BuildSpecialsService {
     'Outhouse',
     'Skylight or Glass Roof',
     'Rocketship',
-    'Decorate for Christmas',
     'Nursery',
     'Motion Gaming Rig',
     'Cupcake Machine',
@@ -141,6 +140,7 @@ export class Sims4BuildSpecialsService {
       'Voidcritter Battle Station',
     ]),
     new SpecialsConditions('Paranormal', ['Séance Room']),
+    new SpecialsConditions('Holiday Celebration', ['Decorate for Christmas']),
   ];
 
   getRandom(): string {
