@@ -1,9 +1,6 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
-import {
-  SIMS_4_PACKS,
-  PackData,
-} from '../components/sims4-pack-settings/sims4-packs';
+import { SIMS_4_PACKS, PackData } from './sims4-packs';
 
 @Injectable({
   providedIn: 'root',
