@@ -76,7 +76,7 @@ export class SuggestedBuildService {
     const buildStyle = this.buildStyleService.getRandom();
     const buildWorld = this.buildWorldService.getRandom();
     const buildLotTrait = this.buildLotTraitService.getRandom();
-    return `Build ${buildColorScheme} ${buildStyle} in ${buildWorld} with the lot trait "${buildLotTrait}" for ${buildSimCount} with a budget of ${buildBudget} that includes ${buildSpecialRoom}.`;
+    return `Build ${buildColorScheme} ${buildStyle} in ${buildWorld} with the lot trait ❛${buildLotTrait}❜ for ${buildSimCount} with a budget of ${buildBudget} that includes ${buildSpecialRoom}.`;
   }
 
   private animateTheSuggestion(data: SuggestionData) {
