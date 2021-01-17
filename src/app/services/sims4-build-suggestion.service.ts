@@ -64,7 +64,6 @@ export class Sims4BuildSuggestionService {
       0,
       this.duration
     );
-    console.table(newSuggestion);
     this.animateTheSuggestion(newSuggestion);
   }
 
@@ -120,10 +119,6 @@ export class Sims4BuildSuggestionService {
         data.suggestionCurrent.length
       );
       const fill = fill1 + fill2;
-
-      console.log(
-        `Progress: ${progress}, SubLength: ${subLength}, Fill: ${fill}`
-      );
 
       const next = new SuggestionData(
         fill,
