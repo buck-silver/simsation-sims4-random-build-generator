@@ -1,3 +1,6 @@
+@use "sass:map";
+@use "../../../styles/palettes";
+
 .border-container,
 .presentation-container {
   box-sizing: border-box;
