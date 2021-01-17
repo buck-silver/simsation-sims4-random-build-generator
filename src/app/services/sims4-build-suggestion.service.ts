@@ -23,7 +23,7 @@ class SuggestionData {
 @Injectable({
   providedIn: 'root',
 })
-export class SuggestedBuildService {
+export class Sims4BuildSuggestionService {
   duration: number = 2500;
 
   suggestion: BehaviorSubject<SuggestionData>;

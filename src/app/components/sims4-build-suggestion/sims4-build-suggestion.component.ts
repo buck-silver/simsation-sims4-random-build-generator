@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { getRandomInt } from '../../util/get-random-int';
-import { SuggestedBuildService } from '../../services/suggested-build.service';
+import { Sims4BuildSuggestionService } from '../../services/sims4-build-suggestion.service';
 
 @Component({
   selector: 'sims4-build-suggestion',
@@ -23,7 +23,7 @@ export class Sims4BuildSuggestionComponent {
 		'🤬','🤢','🤮','🥳','🥺','🤡','🤭','💩'
 	]
 
-  constructor(private suggester: SuggestedBuildService) {
+  constructor(private suggester: Sims4BuildSuggestionService) {
     this.suggester.suggestion.subscribe((val) => {
       this.suggestion = val.suggestionCurrent;
       if (val.inProgress) {
