@@ -177,6 +177,12 @@ export const SIMS_4_PACKS: PackData[] = [
     category: 'Stuff',
   },
   {
+    name: 'Paranormal',
+    icon: 'SP09 Paranormal Stuff.png',
+    enabled: true,
+    category: 'Stuff',
+  },
+  {
     name: 'Vintage Glamour',
     icon: 'SP09 Vintage Glamour Stuff.png',
     enabled: true,
