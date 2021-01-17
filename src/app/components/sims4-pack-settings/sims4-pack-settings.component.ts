@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Sims4PackListService } from './sims4-pack-list.service';
+import { Sims4PackListService } from '../../services/sims4-pack-list.service';
 
 @Component({
   selector: 'app-sims4-pack-settings',

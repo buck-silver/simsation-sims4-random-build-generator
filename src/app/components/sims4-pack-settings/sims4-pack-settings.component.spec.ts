@@ -8,9 +8,8 @@ describe('Sims4PackSettingsComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ Sims4PackSettingsComponent ]
-    })
-    .compileComponents();
+      declarations: [Sims4PackSettingsComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {

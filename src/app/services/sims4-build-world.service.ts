@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Sims4PackListService } from '../sims4-pack-settings/sims4-pack-list.service';
+import { Sims4PackListService } from './sims4-pack-list.service';
 import { getRandomInt } from './get-random-int';
 
 class WorldCondition {

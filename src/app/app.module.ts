@@ -8,12 +8,17 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatTableModule } from '@angular/material/table';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatDividerModule } from '@angular/material/divider';
-import { Sims4PackSettingsComponent } from './sims4-pack-settings/sims4-pack-settings.component';
+import { Sims4PackSettingsComponent } from './components/sims4-pack-settings/sims4-pack-settings.component';
 import { SimsationLogoComponent } from './components/simsation-logo/simsation-logo.component';
 import { SimsationSocialComponent } from './components/simsation-social/simsation-social.component';
 
 @NgModule({
-  declarations: [AppComponent, Sims4PackSettingsComponent, SimsationLogoComponent, SimsationSocialComponent],
+  declarations: [
+    AppComponent,
+    Sims4PackSettingsComponent,
+    SimsationLogoComponent,
+    SimsationSocialComponent,
+  ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
