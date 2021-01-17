@@ -47,7 +47,6 @@ export class Sims4BuildSimoleonRangeService {
   }
 
   getRandom(): string {
-    const rand = Math.floor(getRandomInt(this.min, this.max) + 5);
-    return `${rand}K`;
+    return `${getRandomInt(this.min, this.max)}K`;
   }
 }
