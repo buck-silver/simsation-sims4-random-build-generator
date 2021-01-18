@@ -51,7 +51,7 @@ export class Sims4BuildSpecialsService {
     }
   }
 
-  private _max = 2;
+  private _max = 3;
   get max(): number {
     return this._max;
   }
