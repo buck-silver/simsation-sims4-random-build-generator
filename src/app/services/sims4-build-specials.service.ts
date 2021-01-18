@@ -34,7 +34,7 @@ export class Sims4BuildSpecialsService {
     });
   }
 
-  private _min = MIN_SPECIAL_RANGE;
+  private _min = 2;
   get min(): number {
     return this._min;
   }
@@ -51,7 +51,7 @@ export class Sims4BuildSpecialsService {
     }
   }
 
-  private _max = MAX_SPECIAL_RANGE;
+  private _max = 2;
   get max(): number {
     return this._max;
   }
