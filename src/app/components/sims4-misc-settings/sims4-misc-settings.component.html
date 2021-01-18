@@ -4,20 +4,56 @@
   </mat-expansion-panel-header>
   <mat-divider></mat-divider>
 
+  <h3>Range of Specials</h3>
+  <span class="setting-lbl">
+    Between
+    <span class="slider-val min">{{ specialService.min }}</span>
+    and
+    <span class="slider-val max">{{ specialService.max }}</span>
+    Specials</span
+  >
+  <section class="range-settings">
+    <mat-slider
+      thumbLabel="thumbLabel"
+      [min]="MIN_SPECIALS_RANGE"
+      [max]="simService.max"
+      [disabled]="simService.max == MIN_SPECIALS_RANGE"
+      [value]="MIN_SPECIALS_RANGE"
+      [step]="SPECIAL_RANGE_STEP"
+      tickInterval="1"
+      (change)="changeMinSimRange($event)"
+      class="slider"
+      color="primary"
+    ></mat-slider>
+    <mat-slider
+      thumbLabel="thumbLabel"
+      [min]="specialService.min"
+      [max]="MAX_SPECIALS_RANGE"
+      [disabled]="specialService.min == MAX_SPECIALS_RANGE"
+      [value]="MAX_SPECIALS_RANGE"
+      [step]="SPECIAL_RANGE_STEP"
+      tickInterval="1"
+      (change)="changeMaxSimRange($event)"
+      class="slider"
+      color="accent"
+    ></mat-slider>
+  </section>
+  <mat-divider></mat-divider>
+
   <h3>Range of Sims</h3>
   <span class="setting-lbl">
     Between
-    <span class="slider-val min">{{ simCountService.min }}</span>
+    <span class="slider-val min">{{ simService.min }}</span>
     and
-    <span class="slider-val max">{{ simCountService.max }}</span>
+    <span class="slider-val max">{{ simService.max }}</span>
     Sims</span
   >
   <section class="range-settings">
     <mat-slider
       thumbLabel="thumbLabel"
       [min]="MIN_SIM_RANGE"
-      [max]="simCountService.max"
-      [disabled]="simCountService.max == MIN_SIM_RANGE"
+      [max]="simService.max"
+      [disabled]="simService.max == MIN_SIM_RANGE"
       [value]="MIN_SIM_RANGE"
       [step]="SIM_RANGE_STEP"
       tickInterval="1"
@@ -27,9 +63,9 @@
     ></mat-slider>
     <mat-slider
       thumbLabel="thumbLabel"
-      [min]="simCountService.min"
+      [min]="simService.min"
       [max]="MAX_SIM_RANGE"
-      [disabled]="simCountService.min == MAX_SIM_RANGE"
+      [disabled]="simService.min == MAX_SIM_RANGE"
       [value]="MAX_SIM_RANGE"
       [step]="SIM_RANGE_STEP"
       tickInterval="1"
@@ -43,17 +79,17 @@
   <h3>Range of Simoleons</h3>
   <span class="setting-lbl">
     Between
-    <span class="slider-val min">{{ simoleonRangeService.min }}K</span>
+    <span class="slider-val min">{{ simoleonService.min }}K</span>
     and
-    <span class="slider-val max">{{ simoleonRangeService.max }}K</span>
+    <span class="slider-val max">{{ simoleonService.max }}K</span>
     Simoleons</span
   >
   <section class="range-settings">
     <mat-slider
       thumbLabel="thumbLabel"
       [min]="MIN_SIMOLEON_RANGE"
-      [max]="simoleonRangeService.max"
-      [disabled]="simoleonRangeService.max == MIN_SIMOLEON_RANGE"
+      [max]="simoleonService.max"
+      [disabled]="simoleonService.max == MIN_SIMOLEON_RANGE"
       [value]="MIN_SIMOLEON_RANGE"
       [step]="SIMOLEON_RANGE_STEP"
       tickInterval="1"
@@ -63,9 +99,9 @@
     ></mat-slider>
     <mat-slider
       thumbLabel="thumbLabel"
-      [min]="simoleonRangeService.min"
+      [min]="simoleonService.min"
       [max]="MAX_SIMOLEON_RANGE"
-      [disabled]="simoleonRangeService.min == MAX_SIMOLEON_RANGE"
+      [disabled]="simoleonService.min == MAX_SIMOLEON_RANGE"
       [value]="MAX_SIMOLEON_RANGE"
       [step]="SIMOLEON_RANGE_STEP"
       tickInterval="1"

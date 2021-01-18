@@ -10,6 +10,11 @@ import {
   MIN_SIM_RANGE,
   MAX_SIM_RANGE,
 } from 'src/app/services/sims4-build-sims-range.service';
+import {
+  Sims4BuildSpecialsService,
+  MIN_SPECIALS_RANGE,
+  MAX_SPECIALS_RANGE,
+} from 'src/app/services/sims4-build-specials.service';
 
 @Component({
   selector: 'sims4-misc-settings',
@@ -18,20 +23,33 @@ import {
 })
 export class Sims4MiscSettingsComponent {
   constructor(
-    public simCountService: Sims4BuildSimsRangeService,
-    public simoleonRangeService: Sims4BuildSimoleonRangeService
+    public specialService: Sims4BuildSpecialsService,
+    public simService: Sims4BuildSimsRangeService,
+    public simoleonService: Sims4BuildSimoleonRangeService
   ) {}
+
+  MIN_SPECIALS_RANGE = MIN_SPECIALS_RANGE;
+  MAX_SPECIALS_RANGE = MAX_SPECIALS_RANGE;
+  SPECIAL_RANGE_STEP = 1;
+
+  changeMinSpecialsRange(change: MatSliderChange) {
+    this.specialService.min = change.value ?? this.MIN_SPECIALS_RANGE;
+  }
+
+  changeMaxSpecialsRange(change: MatSliderChange) {
+    this.specialService.max = change.value ?? this.MAX_SPECIALS_RANGE;
+  }
 
   MIN_SIM_RANGE = MIN_SIM_RANGE;
   MAX_SIM_RANGE = MAX_SIM_RANGE;
   SIM_RANGE_STEP = 1;
 
   changeMinSimRange(change: MatSliderChange) {
-    this.simCountService.min = change.value ?? this.MIN_SIM_RANGE;
+    this.simService.min = change.value ?? this.MIN_SIM_RANGE;
   }
 
   changeMaxSimRange(change: MatSliderChange) {
-    this.simCountService.max = change.value ?? this.MAX_SIM_RANGE;
+    this.simService.max = change.value ?? this.MAX_SIM_RANGE;
   }
 
   MIN_SIMOLEON_RANGE = MIN_SIMOLEON_RANGE;
@@ -39,10 +57,10 @@ export class Sims4MiscSettingsComponent {
   SIMOLEON_RANGE_STEP = 5;
 
   changeMinSimoleonRange(change: MatSliderChange) {
-    this.simoleonRangeService.min = change.value ?? this.MIN_SIMOLEON_RANGE;
+    this.simoleonService.min = change.value ?? this.MIN_SIMOLEON_RANGE;
   }
 
   changeMaxSimoleonRange(change: MatSliderChange) {
-    this.simoleonRangeService.max = change.value ?? this.MAX_SIMOLEON_RANGE;
+    this.simoleonService.max = change.value ?? this.MAX_SIMOLEON_RANGE;
   }
 }
