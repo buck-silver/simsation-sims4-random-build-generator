@@ -1,6 +1,9 @@
-import { Injectable } from '@angular/core';
+import { Injectable, Input } from '@angular/core';
 import { Sims4BuildPackService } from './sims4-build-pack.service';
 import { getRandomInt } from '../util/get-random-int';
+
+export const MIN_NUM_OF_SPECIALS = 1;
+export const MAX_NUM_OF_SPECIALS = 10;
 
 class SpecialsConditions {
   constructor(public pack: string = '', public specials: string[] = []) {}
@@ -29,6 +32,63 @@ export class Sims4BuildSpecialsService {
       }
       this.specials = [...updatedSpecials, ...this.baseSpecials];
     });
+  }
+
+  private _min = MIN_NUM_OF_SPECIALS;
+  get min(): number {
+    return this._min;
+  }
+  @Input() set min(val: number) {
+    val = Math.floor(val);
+    if (val < MIN_NUM_OF_SPECIALS) {
+      throw new Error(
+        `Special min cannot be set below minimum of ${MIN_NUM_OF_SPECIALS}`
+      );
+    } else if (val > this.max) {
+      throw new Error(`Sim min cannot be set above maximum of ${this.max}`);
+    } else {
+      this._min = val;
+    }
+  }
+
+  private _max = MAX_NUM_OF_SPECIALS;
+  get max(): number {
+    return this._max;
+  }
+  @Input() set max(val: number) {
+    val = Math.floor(val);
+    if (val > MAX_NUM_OF_SPECIALS) {
+      throw new Error(
+        `Special max cannot be set above maximum of ${MAX_NUM_OF_SPECIALS}`
+      );
+    } else if (val < this.min) {
+      throw new Error(`Special max cannot be set below minimum of ${this.min}`);
+    } else {
+      this._max = val;
+    }
+  }
+
+  getRandomSpecial(): string {
+    return this.specials[getRandomInt(0, this.specials.length - 1)];
+  }
+
+  getManyRandomSpecials(val: number): Set<string> {
+    if (val < this._min && val > this._max) {
+      throw new Error(
+        `Cannot get a number of specials outside the range of ${this._min} and ${this._max}`
+      );
+    }
+    const many = new Set<string>();
+    while (many.size < val) {
+      const rand = this.getRandomSpecial();
+      if (many.has(rand)) continue;
+      else many.add(rand);
+    }
+    return many;
+  }
+
+  getFromRangeManyRandomSpecials(min: number, max: number): Set<string> {
+    return this.getManyRandomSpecials(getRandomInt(min, max));
   }
 
   specials: string[] = [];
@@ -149,18 +209,4 @@ export class Sims4BuildSpecialsService {
     new SpecialsConditions('Vampires', ['Vampire Coffin Room']),
     new SpecialsConditions('Vintage Glamour', ["Butler's Bedroom", 'Vanity']),
   ];
-
-  getRandom(): string {
-    return this.specials[getRandomInt(0, this.specials.length - 1)];
-  }
-
-  getManyRandom(val: number): Set<string> {
-    const many = new Set<string>();
-    while (many.size < val) {
-      const rand = this.getRandom();
-      if (many.has(rand)) continue;
-      else many.add(rand);
-    }
-    return many;
-  }
 }
