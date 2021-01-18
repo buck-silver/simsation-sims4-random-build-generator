@@ -12,8 +12,8 @@ import {
 } from 'src/app/services/sims4-build-sims-range.service';
 import {
   Sims4BuildSpecialsService,
-  MIN_SPECIALS_RANGE,
-  MAX_SPECIALS_RANGE,
+  MIN_SPECIAL_RANGE,
+  MAX_SPECIAL_RANGE,
 } from 'src/app/services/sims4-build-specials.service';
 
 @Component({
@@ -28,15 +28,15 @@ export class Sims4MiscSettingsComponent {
     public simoleonService: Sims4BuildSimoleonRangeService
   ) {}
 
-  MIN_SPECIALS_RANGE = MIN_SPECIALS_RANGE;
-  MAX_SPECIALS_RANGE = MAX_SPECIALS_RANGE;
+  MIN_SPECIALS_RANGE = MIN_SPECIAL_RANGE;
+  MAX_SPECIALS_RANGE = MAX_SPECIAL_RANGE;
   SPECIAL_RANGE_STEP = 1;
 
-  changeMinSpecialsRange(change: MatSliderChange) {
+  changeMinSpecialRange(change: MatSliderChange) {
     this.specialService.min = change.value ?? this.MIN_SPECIALS_RANGE;
   }
 
-  changeMaxSpecialsRange(change: MatSliderChange) {
+  changeMaxSpecialRange(change: MatSliderChange) {
     this.specialService.max = change.value ?? this.MAX_SPECIALS_RANGE;
   }
 

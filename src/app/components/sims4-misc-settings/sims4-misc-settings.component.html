@@ -16,12 +16,12 @@
     <mat-slider
       thumbLabel="thumbLabel"
       [min]="MIN_SPECIALS_RANGE"
-      [max]="simService.max"
-      [disabled]="simService.max == MIN_SPECIALS_RANGE"
+      [max]="specialService.max"
+      [disabled]="specialService.max == MIN_SPECIALS_RANGE"
       [value]="MIN_SPECIALS_RANGE"
       [step]="SPECIAL_RANGE_STEP"
       tickInterval="1"
-      (change)="changeMinSimRange($event)"
+      (change)="changeMinSpecialRange($event)"
       class="slider"
       color="primary"
     ></mat-slider>
@@ -33,7 +33,7 @@
       [value]="MAX_SPECIALS_RANGE"
       [step]="SPECIAL_RANGE_STEP"
       tickInterval="1"
-      (change)="changeMaxSimRange($event)"
+      (change)="changeMaxSpecialRange($event)"
       class="slider"
       color="accent"
     ></mat-slider>
