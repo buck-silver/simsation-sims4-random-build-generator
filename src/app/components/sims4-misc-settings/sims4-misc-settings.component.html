@@ -4,7 +4,7 @@
   </mat-expansion-panel-header>
   <mat-divider></mat-divider>
 
-  <h3>Range of Specials</h3>
+  <h3>Range of Special Rooms or Items</h3>
   <span class="setting-lbl">
     Between
     <span class="slider-val min">{{ specialService.min }}</span>
@@ -18,7 +18,7 @@
       [min]="MIN_SPECIALS_RANGE"
       [max]="specialService.max"
       [disabled]="specialService.max == MIN_SPECIALS_RANGE"
-      [value]="MIN_SPECIALS_RANGE"
+      [value]="specialService.min"
       [step]="SPECIAL_RANGE_STEP"
       tickInterval="1"
       (change)="changeMinSpecialRange($event)"
@@ -30,7 +30,7 @@
       [min]="specialService.min"
       [max]="MAX_SPECIALS_RANGE"
       [disabled]="specialService.min == MAX_SPECIALS_RANGE"
-      [value]="MAX_SPECIALS_RANGE"
+      [value]="specialService.max"
       [step]="SPECIAL_RANGE_STEP"
       tickInterval="1"
       (change)="changeMaxSpecialRange($event)"
@@ -54,7 +54,7 @@
       [min]="MIN_SIM_RANGE"
       [max]="simService.max"
       [disabled]="simService.max == MIN_SIM_RANGE"
-      [value]="MIN_SIM_RANGE"
+      [value]="simService.min"
       [step]="SIM_RANGE_STEP"
       tickInterval="1"
       (change)="changeMinSimRange($event)"
@@ -66,7 +66,7 @@
       [min]="simService.min"
       [max]="MAX_SIM_RANGE"
       [disabled]="simService.min == MAX_SIM_RANGE"
-      [value]="MAX_SIM_RANGE"
+      [value]="simService.max"
       [step]="SIM_RANGE_STEP"
       tickInterval="1"
       (change)="changeMaxSimRange($event)"
@@ -90,7 +90,7 @@
       [min]="MIN_SIMOLEON_RANGE"
       [max]="simoleonService.max"
       [disabled]="simoleonService.max == MIN_SIMOLEON_RANGE"
-      [value]="MIN_SIMOLEON_RANGE"
+      [value]="simoleonService.min"
       [step]="SIMOLEON_RANGE_STEP"
       tickInterval="1"
       (change)="changeMinSimoleonRange($event)"
@@ -102,7 +102,7 @@
       [min]="simoleonService.min"
       [max]="MAX_SIMOLEON_RANGE"
       [disabled]="simoleonService.min == MAX_SIMOLEON_RANGE"
-      [value]="MAX_SIMOLEON_RANGE"
+      [value]="simoleonService.max"
       [step]="SIMOLEON_RANGE_STEP"
       tickInterval="1"
       (change)="changeMaxSimoleonRange($event)"
