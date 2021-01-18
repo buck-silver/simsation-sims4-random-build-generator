@@ -29,13 +29,13 @@ export class Sims4BuildSuggestionService {
   suggestion: BehaviorSubject<SuggestionData>;
 
   constructor(
-    private buildBudgetService: Sims4BuildSimoleonRangeService,
-    private buildColorSchemeService: Sims4BuildColorSchemeService,
-    private buildSimCountService: Sims4BuildSimsRangeService,
-    private buiildSpecialRoomService: Sims4BuildSpecialsService,
-    private buildStyleService: Sims4BuildStyleService,
-    private buildWorldService: Sims4BuildWorldService,
-    private buildLotTraitService: Sims4BuildLotTraitService
+    private buildBudget: Sims4BuildSimoleonRangeService,
+    private buildColors: Sims4BuildColorSchemeService,
+    private buildSimRange: Sims4BuildSimsRangeService,
+    private buiildSpecials: Sims4BuildSpecialsService,
+    private buildStyles: Sims4BuildStyleService,
+    private buildWorlds: Sims4BuildWorldService,
+    private buildLotTraits: Sims4BuildLotTraitService
   ) {
     const sentence = this.suggestTheBuild();
 
@@ -68,14 +68,24 @@ export class Sims4BuildSuggestionService {
   }
 
   private suggestTheBuild(): string {
-    const buildBudget = this.buildBudgetService.getRandom();
-    const buildColorScheme = this.buildColorSchemeService.getRandom();
-    const buildSimCount = this.buildSimCountService.getRandom();
-    const buildSpecialRoom = this.buiildSpecialRoomService.getRandom();
-    const buildStyle = this.buildStyleService.getRandom();
-    const buildWorld = this.buildWorldService.getRandom();
-    const buildLotTrait = this.buildLotTraitService.getRandom();
-    return `Build ${buildColorScheme} ${buildStyle} in ${buildWorld} with the lot trait ❛${buildLotTrait}❜ for ${buildSimCount} with a budget of ${buildBudget} that includes ${buildSpecialRoom}.`;
+    const budget = this.buildBudget.getRandom();
+    const color = this.buildColors.getRandom();
+    const sims = this.buildSimRange.getRandom();
+    const style = this.buildStyles.getRandom();
+    const world = this.buildWorlds.getRandom();
+    const lotTrait = this.buildLotTraits.getRandom();
+    const specials = this.suggestSpecials();
+    return `Build ${color} ${style} in ${world} with the lot trait ❛${lotTrait}❜ for ${sims} with a budget of ${budget}.${specials}`;
+  }
+
+  private suggestSpecials(): string {
+    let includes = '\n\nIt must include:';
+    const specials = this.buiildSpecials.getFromBetweenRangeManyRandomSpecials();
+    for (const special of specials) {
+      includes += `\n\t-\t${special}`;
+    }
+
+    return includes;
   }
 
   private animateTheSuggestion(data: SuggestionData) {
