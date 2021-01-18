@@ -4,27 +4,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 1rem 0;
+  margin: 0.5rem 0;
 
   img {
     height: 3rem;
-  }
-}
-
-@media only screen and (max-width: 60rem) {
-  .logo {
-    height: 2.5rem;
-  }
-}
-
-@media only screen and (max-width: 40rem) {
-  .logo {
-    height: 2rem;
-  }
-}
-
-@media only screen and (max-width: 20rem) {
-  .logo {
-    height: 1.5rem;
   }
 }
