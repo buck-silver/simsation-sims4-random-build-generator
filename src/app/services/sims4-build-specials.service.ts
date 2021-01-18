@@ -2,8 +2,8 @@ import { Injectable, Input } from '@angular/core';
 import { Sims4BuildPackService } from './sims4-build-pack.service';
 import { getRandomInt } from '../util/get-random-int';
 
-export const MIN_NUM_OF_SPECIALS = 1;
-export const MAX_NUM_OF_SPECIALS = 10;
+export const MIN_SPECIALS_RANGE = 1;
+export const MAX_SPECIALS_RANGE = 10;
 
 class SpecialsConditions {
   constructor(public pack: string = '', public specials: string[] = []) {}
@@ -34,15 +34,15 @@ export class Sims4BuildSpecialsService {
     });
   }
 
-  private _min = MIN_NUM_OF_SPECIALS;
+  private _min = MIN_SPECIALS_RANGE;
   get min(): number {
     return this._min;
   }
   @Input() set min(val: number) {
     val = Math.floor(val);
-    if (val < MIN_NUM_OF_SPECIALS) {
+    if (val < MIN_SPECIALS_RANGE) {
       throw new Error(
-        `Special min cannot be set below minimum of ${MIN_NUM_OF_SPECIALS}`
+        `Special min cannot be set below minimum of ${MIN_SPECIALS_RANGE}`
       );
     } else if (val > this.max) {
       throw new Error(`Sim min cannot be set above maximum of ${this.max}`);
@@ -51,15 +51,15 @@ export class Sims4BuildSpecialsService {
     }
   }
 
-  private _max = MAX_NUM_OF_SPECIALS;
+  private _max = MAX_SPECIALS_RANGE;
   get max(): number {
     return this._max;
   }
   @Input() set max(val: number) {
     val = Math.floor(val);
-    if (val > MAX_NUM_OF_SPECIALS) {
+    if (val > MAX_SPECIALS_RANGE) {
       throw new Error(
-        `Special max cannot be set above maximum of ${MAX_NUM_OF_SPECIALS}`
+        `Special max cannot be set above maximum of ${MAX_SPECIALS_RANGE}`
       );
     } else if (val < this.min) {
       throw new Error(`Special max cannot be set below minimum of ${this.min}`);
