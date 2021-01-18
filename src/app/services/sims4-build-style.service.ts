@@ -27,6 +27,7 @@ export class Sims4BuildStyleService {
   styles: string[] = [];
 
   private baseStyles: string[] = [
+    'Abandoned House',
     'Adobe House',
     'A-Frame House',
     'All Glass House',
@@ -53,6 +54,7 @@ export class Sims4BuildStyleService {
     'Penthouse',
     'Ranch Bungalow',
     'Rental House',
+    'Secret Hideout',
     'Shack',
     'Shipping Container House',
     'Small 100-tile House',
@@ -70,9 +72,11 @@ export class Sims4BuildStyleService {
   ];
 
   private stylesWithConditions: StyleCondition[] = [
-    new StyleCondition('Snowy Escape', ['Traditional Japanese House']),
     new StyleCondition('Eco Lifestyle', ['Eco Friendly House']),
+    new StyleCondition('Dine Out', ['Restaurant with Apartment']),
+    new StyleCondition('Get to Work', ['Retail Store with Apartment']),
     new StyleCondition('Paranormal', ['Haunted House']),
+    new StyleCondition('Snowy Escape', ['Traditional Japanese House']),
   ];
 
   getRandom(): string {
