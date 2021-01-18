@@ -1,5 +1,6 @@
 .app-wrapper {
   box-sizing: border-box;
+  margin: 0;
   padding: 1rem;
   width: 100%;
   display: flex;
@@ -8,6 +9,8 @@
 }
 .app {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
   position: relative;
   width: 100%;
   max-width: 45rem;
