@@ -73,8 +73,8 @@ export class Sims4BuildStyleService {
 
   private stylesWithConditions: StyleCondition[] = [
     new StyleCondition('Eco Lifestyle', ['Eco Friendly House']),
-    new StyleCondition('Dine Out', ['Restaurant with Apartment']),
-    new StyleCondition('Get to Work', ['Retail Store with Apartment']),
+    new StyleCondition('Dine Out', ['Restaurant with an Apartment']),
+    new StyleCondition('Get to Work', ['Retail Store with an Apartment']),
     new StyleCondition('Paranormal', ['Haunted House']),
     new StyleCondition('Snowy Escape', ['Traditional Japanese House']),
   ];
