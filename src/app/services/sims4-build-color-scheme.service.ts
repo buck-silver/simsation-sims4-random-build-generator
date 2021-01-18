@@ -6,19 +6,19 @@ import { getRandomInt } from '../util/get-random-int';
 })
 export class Sims4BuildColorSchemeService {
   colorSchemes: string[] = [
-    'red',
-    'orange',
-    'yellow',
-    'green',
-    'blue',
-    'indigo',
-    'purple',
-    'pink',
-    'brown',
-    'grey',
-    'black',
-    'white',
-    'rainbow',
+    'a red',
+    'an orange',
+    'a yellow',
+    'a green',
+    'a blue',
+    'an indigo',
+    'a purple',
+    'a pink',
+    'a brown',
+    'a grey',
+    'a black',
+    'a white',
+    'a rainbow',
   ];
 
   getRandom(): string {
