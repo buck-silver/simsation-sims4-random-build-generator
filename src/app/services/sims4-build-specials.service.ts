@@ -72,14 +72,9 @@ export class Sims4BuildSpecialsService {
     return this.specials[getRandomInt(0, this.specials.length - 1)];
   }
 
-  getManyRandomSpecials(val: number): Set<string> {
-    if (val < this._min && val > this._max) {
-      throw new Error(
-        `Cannot get a number of specials outside the range of ${this._min} and ${this._max}`
-      );
-    }
+  getManyRandomSpecials(amount: number): Set<string> {
     const many = new Set<string>();
-    while (many.size < val) {
+    while (many.size < amount) {
       const rand = this.getRandomSpecial();
       if (many.has(rand)) continue;
       else many.add(rand);
@@ -87,7 +82,17 @@ export class Sims4BuildSpecialsService {
     return many;
   }
 
-  getFromRangeManyRandomSpecials(min: number, max: number): Set<string> {
+  getFromBetweenRangeManyRandomSpecials(
+    min?: number,
+    max?: number
+  ): Set<string> {
+    min = min ?? this._min;
+    max = max ?? this._max;
+    if (min < this._min && max > this._max) {
+      throw new Error(
+        `Cannot get a number of specials outside the range of ${this._min} and ${this._max}`
+      );
+    }
     return this.getManyRandomSpecials(getRandomInt(min, max));
   }
 
