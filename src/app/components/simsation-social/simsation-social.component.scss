@@ -10,24 +10,26 @@
   display: flex;
   justify-content: space-between;
 
-  i {
-    font-size: 2em;
+  .social-icon {
+    width: 2em;
+    height: 2em;
+    color: #fff;
     transition: color ease 100ms;
   }
 
-  .fa-twitch:hover {
+  .twitch:hover {
     color: #9147ff;
   }
 
-  .fa-reddit-alien:hover {
+  .reddit:hover {
     color: #ff4500;
   }
 
-  .fa-twitter:hover {
+  .twitter:hover {
     color: #1da1f2;
   }
 
-  .fa-youtube:hover {
+  .youtube:hover {
     color: #ff0000;
   }
 }
