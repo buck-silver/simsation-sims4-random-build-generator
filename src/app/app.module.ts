@@ -14,8 +14,11 @@ import { SimsationSocialComponent } from './components/simsation-social/simsatio
 import { Sims4PackSettingsComponent } from './components/sims4-pack-settings/sims4-pack-settings.component';
 import { Sims4BuildSuggestionComponent } from './components/sims4-build-suggestion/sims4-build-suggestion.component';
 import { Sims4MiscSettingsComponent } from './components/sims4-misc-settings/sims4-misc-settings.component';
+import { AppRoutingModule } from './app-routing.module';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
+import { ScullyLibModule } from '@scullyio/ng-lib';
+import { Sims4RandomBuildGeneratorComponent } from './components/sims4-random-build-generator/sims4-random-build-generator.component';
 
 @NgModule({
   declarations: [
@@ -25,17 +28,22 @@ import { environment } from '../environments/environment';
     Sims4PackSettingsComponent,
     Sims4BuildSuggestionComponent,
     Sims4MiscSettingsComponent,
+    Sims4RandomBuildGeneratorComponent,
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    AppRoutingModule,
     MatButtonModule,
     MatCheckboxModule,
     MatDividerModule,
     MatExpansionModule,
     MatIconModule,
     MatSliderModule,
-    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
+    ServiceWorkerModule.register('ngsw-worker.js', {
+      enabled: environment.production,
+    }),
+    ScullyLibModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
