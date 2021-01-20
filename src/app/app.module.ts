@@ -14,6 +14,8 @@ import { SimsationSocialComponent } from './components/simsation-social/simsatio
 import { Sims4PackSettingsComponent } from './components/sims4-pack-settings/sims4-pack-settings.component';
 import { Sims4BuildSuggestionComponent } from './components/sims4-build-suggestion/sims4-build-suggestion.component';
 import { Sims4MiscSettingsComponent } from './components/sims4-misc-settings/sims4-misc-settings.component';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -33,6 +35,7 @@ import { Sims4MiscSettingsComponent } from './components/sims4-misc-settings/sim
     MatExpansionModule,
     MatIconModule,
     MatSliderModule,
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
   ],
   providers: [],
   bootstrap: [AppComponent],
